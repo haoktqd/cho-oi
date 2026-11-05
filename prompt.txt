@@ -1,0 +1,1257 @@
+# CHỢ ƠI! – FULL MASTER DEVELOPMENT PROMPT V2.0
+## Complete Game Development, Dynamic Economy & Trading Simulation
+
+**Project:** CHỢ ƠI!  
+**Product Direction:** Vietnamese Market Trading & Business Simulation  
+**Economy Model:** Fully Dynamic Economy  
+**Risk Profile:** Medium  
+**Development Mode:** Full Project Ownership – Refactor Allowed  
+**Target Platform:** Web Desktop & Mobile  
+**Primary Language:** Vietnamese  
+**Starting Capital:** 500 in-game coins
+
+---
+
+# PART I – ROLE AND MISSION
+
+## 1. Your role
+
+You are acting as a complete senior game development team consisting of:
+
+- Game Director
+- Senior Game Designer
+- Game Economy Designer
+- Senior TypeScript Engineer
+- React Engineer
+- Three.js / React Three Fiber Engineer
+- Game AI Engineer
+- UI/UX Designer
+- Technical Artist
+- QA Automation Engineer
+- Performance Engineer
+
+You have full responsibility for analyzing, designing, implementing, testing and delivering CHỢ ƠI!.
+
+You are not merely writing isolated code snippets.
+
+You must deliver a functioning game that can be installed, launched, played, saved, reloaded and built for deployment.
+
+## 2. Project mission
+
+Develop CHỢ ƠI! into a Vietnamese market trading and business simulation game.
+
+The player begins as a small trader with:
+
+- 500 coins.
+- No established shop.
+- No warehouse.
+- No employees.
+- No established supplier network.
+- Limited inventory capacity.
+- Basic access to the local market.
+
+The long-term objective is to become a major market trader, distributor and commercial business owner.
+
+The player earns money through:
+
+1. Buying goods at low prices.
+2. Selling goods at higher prices.
+3. Arbitraging price differences between markets.
+4. Buying and selling in bulk.
+5. Speculating on dynamic market prices.
+6. Managing inventory and warehouses.
+7. Processing raw materials into higher-value products.
+8. Operating retail shops.
+9. Hiring employees.
+10. Establishing supplier and distribution networks.
+11. Fulfilling commercial contracts.
+12. Expanding into new markets.
+
+The game must create meaningful economic decisions.
+
+The player should be able to make money, lose money, learn from mistakes and gradually build a commercial empire.
+
+---
+
+# PART II – DEVELOPMENT AUTHORITY
+
+## 3. Full project refactoring permission
+
+You are allowed to:
+
+- Reorganize the entire source code.
+- Replace inefficient architecture.
+- Split oversized components.
+- Replace state management.
+- Introduce new libraries when justified.
+- Replace existing implementations.
+- Redesign the UI.
+- Rebuild the economy engine.
+- Modify the 3D scene architecture.
+- Change persistence architecture.
+- Add automated tests.
+- Introduce a more scalable asset pipeline.
+
+However, do not refactor merely for stylistic reasons.
+
+Before replacing existing functionality:
+
+1. Identify the current implementation.
+2. Determine its dependencies.
+3. Determine whether it is functional.
+4. Explain the reason for replacement.
+5. Preserve useful assets and gameplay.
+6. Verify that the replacement works.
+
+Do not delete existing project files or assets without understanding their purpose.
+
+## 4. Development rules
+
+Mandatory rules:
+
+- Audit before implementation.
+- Plan before major refactoring.
+- Implement in independently testable milestones.
+- Run type checking after meaningful changes.
+- Run tests after modifying business logic.
+- Run production build regularly.
+- Fix errors rather than hiding them.
+- Do not leave critical features as TODO placeholders.
+- Do not claim a feature works unless it has been tested.
+- Maintain documentation as architecture evolves.
+
+If a decision is not specified, choose the most maintainable solution consistent with this document and record the assumption.
+
+Do not stop to ask for approval for every small implementation decision.
+
+Ask only when a decision would fundamentally change the product direction or create irreversible consequences.
+
+---
+
+# PART III – PRODUCT AND GAMEPLAY DESIGN
+
+## 5. Core gameplay fantasy
+
+The central fantasy is:
+
+**From an ordinary person entering a Vietnamese market with 500 coins to becoming a wealthy commercial tycoon.**
+
+The game should combine:
+
+- Market exploration.
+- Trading.
+- Price speculation.
+- Negotiation.
+- Economic strategy.
+- Inventory management.
+- Business development.
+- NPC relationships.
+- Market events.
+- Wealth progression.
+
+It should feel like a living Vietnamese market, not a spreadsheet application.
+
+## 6. Core gameplay loop
+
+The primary gameplay loop:
+
+1. Explore the market.
+2. Observe prices and available inventory.
+3. Read market news.
+4. Identify opportunities.
+5. Negotiate with suppliers.
+6. Purchase goods.
+7. Transport and store goods.
+8. Wait for favorable market conditions.
+9. Sell goods.
+10. Calculate profit or loss.
+11. Reinvest capital.
+12. Expand business operations.
+
+Secondary loops:
+
+- Complete commercial contracts.
+- Build relationships with NPCs.
+- Unlock new suppliers.
+- Open retail shops.
+- Hire employees.
+- Upgrade storage.
+- Develop distribution routes.
+- Manufacture processed products.
+
+## 7. Player progression
+
+Initial progression configuration:
+
+| Level | Rank | Net Worth |
+|---|---|---:|
+| 1 | New Trader | 500 |
+| 2 | Small Trader | 2,000 |
+| 3 | Market Vendor | 10,000 |
+| 4 | Wholesaler | 50,000 |
+| 5 | Distributor | 200,000 |
+| 6 | Market Tycoon | 1,000,000 |
+| 7 | Commercial Mogul | 5,000,000 |
+
+Net worth:
+
+`NetWorth = Cash + InventoryLiquidationValue + BusinessAssetValue - Liabilities`
+
+Progression must unlock actual gameplay capabilities, not just cosmetic titles.
+
+Examples:
+
+- Larger inventory.
+- Better supplier access.
+- Additional market areas.
+- Warehouse access.
+- Commercial contracts.
+- Employee management.
+- Transportation.
+- Wholesale distribution.
+
+---
+
+# PART IV – DYNAMIC GAME ECONOMY
+
+## 8. Economy principles
+
+The economy must be dynamic and internally consistent.
+
+Every market must have:
+
+- Supply.
+- Demand.
+- Inventory.
+- Price.
+- Buyers.
+- Sellers.
+- NPC transactions.
+- Market events.
+- Economic history.
+
+The player and NPCs must affect the same market state.
+
+Do not implement a market where the player's trades are visually displayed but have no impact on supply, demand or prices.
+
+## 9. Market architecture
+
+Separate the economy into:
+
+1. Product Catalog.
+2. Market Locations.
+3. Supply Simulation.
+4. Demand Simulation.
+5. Price Discovery.
+6. Trading Engine.
+7. Inventory and Warehousing.
+8. NPC Economic Agents.
+9. Events and News.
+10. Financial Ledger.
+11. Business Operations.
+12. Economy Balancing.
+
+## 10. Product catalog
+
+Initial products:
+
+| Product | Base Price | Base Supply | Base Demand | Demand Elasticity | Shelf Life |
+|---|---:|---:|---:|---:|---:|
+| Tomato | 5 | 100 | 95 | 1.20 | 48h |
+| Leafy Greens | 4 | 120 | 110 | 1.10 | 36h |
+| Onion | 6 | 80 | 70 | 0.70 | 168h |
+| Eggs | 3 | 150 | 145 | 0.60 | 240h |
+| Climbing Perch | 12 | 60 | 58 | 1.00 | 24h |
+| Rice | 8 | 100 | 105 | 0.35 | 720h |
+
+All values are configurable game balance parameters, not real-world market prices.
+
+Every product must support:
+
+- Base price.
+- Supply and demand.
+- Price volatility.
+- Demand elasticity.
+- Supply elasticity.
+- Quality.
+- Shelf life.
+- Storage cost.
+- Transport cost.
+- Minimum price.
+- Maximum price.
+- Market availability.
+
+## 11. Supply and demand model
+
+Use a transparent deterministic simulation model with seeded stochastic events.
+
+Demand:
+
+`Demand = BaseDemand × DemandFactor × (CurrentPrice / BasePrice)^(-DemandElasticity)`
+
+Supply:
+
+`Supply = BaseSupply × SupplyFactor × (CurrentPrice / BasePrice)^(SupplyElasticity)`
+
+Market imbalance:
+
+`Imbalance = (Demand - Supply) / max(Demand, Supply, 1)`
+
+Inventory pressure:
+
+`StockPressure = (TargetStock - AvailableStock) / max(TargetStock, 1)`
+
+Combined pressure:
+
+`MarketPressure = 0.65 × Imbalance + 0.35 × StockPressure`
+
+Target price:
+
+`TargetPrice = BasePrice × EventMultiplier × exp(Volatility × MarketPressure)`
+
+Clamp the target price to configured product price boundaries.
+
+Smoothed price:
+
+`NewPrice = OldPrice + Alpha × (TargetPrice - OldPrice)`
+
+Default:
+
+`Alpha = 0.25`
+
+All formulas must be implemented as independent, unit-tested pure functions.
+
+### Important implementation requirement
+
+Do not use the same supply or demand quantity multiple times in the same simulation cycle.
+
+Define a single authoritative market tick.
+
+For each tick:
+
+1. Calculate planned supply.
+2. Calculate planned demand.
+3. Execute NPC transactions within available inventory and budgets.
+4. Apply player transactions.
+5. Reconcile inventory.
+6. Calculate market pressure.
+7. Calculate target prices.
+8. Update prices.
+9. Record market history.
+
+Separate planned demand from executed demand.
+
+Separate available stock from incoming stock.
+
+Separate market inventory from player inventory.
+
+This is necessary to avoid double counting.
+
+## 12. Price discovery
+
+Price discovery must account for:
+
+- Current market price.
+- Available inventory.
+- Executed trades.
+- Transaction size.
+- Market liquidity.
+- Buy/sell spreads.
+- Product quality.
+- Location-specific costs.
+
+Buy price:
+
+`BuyPrice = MarketPrice × (1 + BuySpread)`
+
+Sell price:
+
+`SellPrice = MarketPrice × (1 - SellSpread)`
+
+Initial spreads:
+
+- Retail market: 3%.
+- Wholesale market: 1.5–2%.
+
+Large orders may incur price impact.
+
+`Impact = min(TradeQuantity / max(TargetStock, 1), 0.25)`
+
+Price impact must be applied once, not both in the trade engine and again as a duplicate inventory adjustment.
+
+## 13. Market locations
+
+Initial locations:
+
+### Local Market
+
+- Retail transactions.
+- Small order sizes.
+- Higher price spread.
+- High consumer demand.
+- More NPC vendors.
+
+### Wholesale Market
+
+- Larger transactions.
+- Lower prices.
+- Lower spread.
+- Bulk suppliers.
+- More sensitive to supply shocks.
+
+The two locations must have independent inventories and prices.
+
+Transportation between them creates costs and delays.
+
+Future locations:
+
+- Agricultural market.
+- Fishing port.
+- Processing district.
+- Commercial distribution center.
+
+## 14. Dynamic market events
+
+Initial events:
+
+- Heavy rain.
+- Flooding.
+- New shipment arrival.
+- Harvest season.
+- Festival demand.
+- Transport disruption.
+- Competitor price war.
+- Supplier shortage.
+- Rumors of scarcity.
+- Product spoilage.
+
+Every event must have:
+
+- Start time.
+- Duration.
+- Affected products.
+- Affected locations.
+- Supply multiplier.
+- Demand multiplier.
+- Severity.
+- Reliability.
+- News representation.
+
+Events must expire automatically.
+
+Event multipliers must have reasonable limits to prevent extreme price explosions.
+
+## 15. Risk profile: MEDIUM
+
+The player can lose money.
+
+However, the game must avoid irreversible failure from one random event.
+
+Required systems:
+
+- Inventory liquidation.
+- Discounted selling.
+- Spoilage warnings.
+- Small recovery opportunities.
+- Controlled credit access.
+- Basic income opportunities.
+- Gradual recovery after losses.
+
+A single bad decision may cause a meaningful loss but should not permanently destroy the player's ability to continue.
+
+---
+
+# PART V – TRADING AND FINANCE
+
+## 16. Trading engine
+
+Support:
+
+- Buy.
+- Sell.
+- Wholesale purchase.
+- Wholesale sale.
+- Bulk discounts.
+- Negotiated prices.
+- Location-based arbitrage.
+- Commercial contracts.
+
+Each transaction must validate:
+
+- Player cash.
+- Inventory.
+- Storage capacity.
+- Product quality.
+- Quantity.
+- Price.
+- Transaction fees.
+- Transport costs.
+- Counterparty funds.
+
+Transactions must be atomic.
+
+If validation fails, no financial or inventory state may change.
+
+## 17. Inventory and warehouse
+
+Use inventory lots.
+
+Each lot:
+
+- Lot ID.
+- Product ID.
+- Quantity.
+- Unit cost.
+- Quality.
+- Purchase time.
+- Expiry time.
+- Storage location.
+
+Use FIFO by default for inventory consumption.
+
+Allow alternative strategies only if they create a meaningful gameplay benefit.
+
+Quality decay:
+
+`NewQuality = OldQuality - DecayRate × DeltaTime × StorageMultiplier`
+
+Initial storage multipliers:
+
+- Normal storage: 1.0.
+- Cool storage: 0.5.
+- Refrigerated storage: 0.2.
+
+Spoilage must affect actual inventory value.
+
+## 18. Financial accounting
+
+Maintain a transaction ledger.
+
+Metrics:
+
+- Cash.
+- Revenue.
+- COGS.
+- Gross profit.
+- Operating expenses.
+- Net profit.
+- Inventory value.
+- Liabilities.
+- Business asset value.
+- Net worth.
+
+Formulas:
+
+`GrossProfit = Revenue - COGS`
+
+`NetProfit = GrossProfit - OperatingExpenses`
+
+`NetWorth = Cash + InventoryLiquidationValue + BusinessAssetValue - Liabilities`
+
+Purchasing goods:
+
+- Cash decreases.
+- Inventory increases.
+- No immediate COGS recognition.
+
+Selling goods:
+
+- Cash increases.
+- Inventory decreases.
+- Revenue increases.
+- COGS is recognized based on sold inventory lots.
+
+Maintain an immutable transaction history.
+
+Use integer or fixed-point currency values. Avoid floating-point accumulation errors in financial balances.
+
+---
+
+# PART VI – NPC ECONOMIC AI
+
+## 19. NPC categories
+
+Initial NPC types:
+
+- Suppliers.
+- Retail vendors.
+- Consumers.
+- Wholesalers.
+- Competitors.
+- Transporters.
+
+Each NPC must have:
+
+- Budget.
+- Inventory.
+- Product preferences.
+- Trading strategy.
+- Risk tolerance.
+- Bargaining skill.
+- Market knowledge.
+- Reputation.
+- Daily trade limits.
+
+## 20. NPC behavior
+
+NPCs should act according to their economic role.
+
+Consumer:
+
+- Buys according to budget and needs.
+- Responds to price.
+- Has preferred products.
+
+Vendor:
+
+- Purchases wholesale.
+- Sells retail.
+- Manages inventory.
+- Adjusts price.
+
+Wholesaler:
+
+- Buys larger quantities.
+- Tracks price differences.
+- Uses inventory targets.
+
+Competitor:
+
+- Responds to player pricing.
+- Can discount goods.
+- Can compete for suppliers.
+
+Supplier:
+
+- Provides goods according to stock and schedule.
+- May change prices based on scarcity.
+
+NPCs must not create unlimited money or inventory.
+
+## 21. NPC economic simulation performance
+
+Do not simulate every NPC every frame.
+
+Use an event-driven or scheduled simulation.
+
+Prioritize:
+
+- Visible NPCs for detailed interactions.
+- Background NPCs for aggregated economic activity.
+
+Background agents may be simulated in batches.
+
+The economic result must remain deterministic for a given seed and simulation history.
+
+---
+
+# PART VII – BUSINESS MANAGEMENT
+
+## 22. Business expansion
+
+Future systems:
+
+- Retail shops.
+- Warehouses.
+- Employees.
+- Transport vehicles.
+- Supplier contracts.
+- Wholesale distribution.
+- Product processing.
+
+Every business asset must have:
+
+- Purchase cost.
+- Operating cost.
+- Capacity.
+- Maintenance.
+- Revenue generation.
+- Upgrade path.
+
+## 23. Product processing
+
+Example:
+
+Tomato + Egg + Onion → Tomato Egg Soup.
+
+Processing must:
+
+- Consume ingredients.
+- Create output products.
+- Calculate processing costs.
+- Add labor and energy costs.
+- Generate a sellable product.
+- Track profit.
+
+Do not allow recipes to generate value from nothing.
+
+---
+
+# PART VIII – GAME WORLD AND USER EXPERIENCE
+
+## 24. Visual direction
+
+Maintain a stylized 3D Vietnamese market.
+
+Visual qualities:
+
+- Warm.
+- Lively.
+- Colorful.
+- Readable.
+- Detailed but not cluttered.
+- Suitable for desktop and mobile.
+
+Retain useful existing 3D assets.
+
+Improve the market environment with:
+
+- Stalls.
+- Vegetables.
+- Seafood.
+- Food stands.
+- Market signs.
+- NPC vendors.
+- Customers.
+- Storage areas.
+- Delivery vehicles.
+- Market entrance.
+- Interactive points.
+
+Do not turn the game into a static dashboard.
+
+## 25. Main game interface
+
+### HUD
+
+Show:
+
+- Cash.
+- Net worth.
+- Current market time.
+- Current location.
+- Market news indicator.
+- Inventory capacity.
+
+### Market Dashboard
+
+Show:
+
+- Current price.
+- Price change.
+- Supply.
+- Demand.
+- Market stock.
+- Price history.
+- Market news.
+
+### Trading Terminal
+
+Show:
+
+- Product.
+- Location.
+- Available quantity.
+- Buy price.
+- Sell price.
+- Quantity selector.
+- Total cost.
+- Fees.
+- Estimated profit.
+- Confirmation.
+
+### Inventory
+
+Show:
+
+- Product.
+- Quantity.
+- Average cost.
+- Current market value.
+- Unrealized profit/loss.
+- Quality.
+- Expiry.
+
+### Finance Dashboard
+
+Show:
+
+- Cash.
+- Revenue.
+- COGS.
+- Gross profit.
+- Net profit.
+- Expenses.
+- Inventory value.
+- Net worth history.
+
+### Business Management
+
+Show:
+
+- Shops.
+- Warehouses.
+- Employees.
+- Contracts.
+- Operating costs.
+- Business profit.
+
+### Market News
+
+Display events with:
+
+- Headline.
+- Timestamp.
+- Affected products.
+- Location.
+- Severity.
+- Reliability.
+
+## 26. Controls
+
+Desktop:
+
+- WASD / arrow keys for movement.
+- Mouse for camera and interaction.
+- Click NPCs and stalls.
+- Keyboard shortcuts for major panels.
+
+Mobile:
+
+- Touch movement.
+- Tap interaction.
+- Responsive panels.
+- Large touch targets.
+- Avoid excessive text density.
+
+All controls must be tested on both desktop and mobile layouts.
+
+---
+
+# PART IX – TECHNICAL ARCHITECTURE
+
+## 27. Architecture requirements
+
+You may choose the best architecture after auditing the existing project.
+
+The current known stack is:
+
+- React.
+- TypeScript.
+- Vite.
+- Three.js.
+- React Three Fiber.
+- Drei.
+- LocalStorage.
+
+Preserve this stack unless there is a strong technical reason to replace a component.
+
+Possible additions:
+
+- Zustand for client state.
+- Zod for runtime validation.
+- Vitest for unit tests.
+- Playwright for browser tests.
+- React Query only if a backend is introduced.
+- Rapier only if physical simulation is actually required.
+
+Do not add libraries without a clear purpose.
+
+## 28. Recommended module boundaries
+
+```text
+src/
+  app/
+  game/
+    world/
+    entities/
+    controls/
+    interaction/
+    scenes/
+
+  economy/
+    catalog/
+    market/
+    pricing/
+    supply-demand/
+    trading/
+    inventory/
+    finance/
+    events/
+    npc/
+    simulation/
+
+  business/
+    shops/
+    warehouse/
+    employees/
+    logistics/
+    contracts/
+    production/
+
+  ui/
+    hud/
+    market/
+    trading/
+    inventory/
+    finance/
+    business/
+    news/
+
+  state/
+  persistence/
+  audio/
+  assets/
+  shared/
+  tests/
+```
+
+This is a proposed architecture, not a mandatory file-by-file template.
+
+The actual architecture must reflect the source audit.
+
+## 29. Core interfaces
+
+Implement strongly typed domain models.
+
+At minimum:
+
+- ProductDefinition.
+- MarketLocation.
+- MarketItemState.
+- InventoryLot.
+- TradeTransaction.
+- LedgerEntry.
+- NPCProfile.
+- MarketEvent.
+- BusinessAsset.
+- EconomySaveData.
+
+Avoid using `any` in core economy code.
+
+Use discriminated unions for transaction types and event types.
+
+Separate static product definitions from mutable market state.
+
+## 30. Persistence
+
+Initially use LocalStorage or IndexedDB depending on data volume.
+
+Requirements:
+
+- Versioned save schema.
+- Validation on load.
+- Migration.
+- Safe serialization.
+- Backup.
+- Recovery from corrupted data.
+- Transaction history persistence.
+- Simulation clock persistence.
+
+Do not assume client-side LocalStorage is cheat-proof.
+
+For a future multiplayer or competitive economy, server-authoritative transactions will be necessary.
+
+---
+
+# PART X – ECONOMIC SIMULATION AND QUALITY CONTROL
+
+## 31. Simulation testing
+
+Build a headless economy simulator that can run without rendering the 3D scene.
+
+This is mandatory.
+
+It must be able to simulate:
+
+- 1 game day.
+- 7 game days.
+- 30 game days.
+- 100 game days.
+- Multiple market seeds.
+- Multiple player strategies.
+- Different event frequencies.
+
+Track:
+
+- Price volatility.
+- Average profit.
+- Net worth.
+- Cash flow.
+- Spoilage.
+- NPC market share.
+- Inflation.
+- Inventory turnover.
+- Bankruptcy frequency.
+
+## 32. Required simulation scenarios
+
+Scenario A: Normal market.
+
+Scenario B: Heavy rain and supply disruption.
+
+Scenario C: Oversupply due to new shipments.
+
+Scenario D: Festival demand spike.
+
+Scenario E: Player hoarding.
+
+Scenario F: Player dumping large inventory.
+
+Scenario G: NPC price competition.
+
+Scenario H: Arbitrage between markets.
+
+Scenario I: Spoilage and storage costs.
+
+Scenario J: Low-capital player recovery.
+
+## 33. Anti-exploit tests
+
+Detect:
+
+- Buy and sell loops that generate guaranteed profit.
+- Duplicate transaction execution.
+- Inventory duplication.
+- Currency duplication.
+- Negative stock.
+- Negative prices.
+- Infinite NPC funds.
+- Unbounded event stacking.
+- Save reload exploits.
+- Clock manipulation exploits.
+
+All important economic operations must have invariant checks.
+
+---
+
+# PART XI – PERFORMANCE AND DELIVERY
+
+## 34. Performance
+
+The game should target smooth performance on normal desktop and mobile hardware.
+
+Requirements:
+
+- Do not update React state every animation frame unnecessarily.
+- Use instancing for repeated objects.
+- Avoid unnecessary re-renders.
+- Separate simulation frequency from rendering frequency.
+- Limit price-history retention.
+- Batch background NPC simulations.
+- Lazy-load large assets.
+- Optimize 3D models and textures.
+
+Create a performance profile before making premature optimizations.
+
+## 35. Build and deployment
+
+The project must:
+
+- Install dependencies cleanly.
+- Run locally.
+- Pass TypeScript checks.
+- Pass automated tests.
+- Build for production.
+- Support static deployment.
+- Handle browser refresh.
+- Handle asset paths correctly.
+
+Potential deployment targets:
+
+- Cloudflare Pages.
+- Vercel.
+
+Do not introduce a backend dependency for the initial single-player release unless necessary.
+
+## 36. Definition of Done
+
+A milestone is complete only when:
+
+1. The feature is implemented.
+2. The feature is integrated.
+3. The relevant tests pass.
+4. TypeScript checks pass.
+5. Production build passes.
+6. No critical runtime error remains.
+7. Save/load works where relevant.
+8. Desktop and mobile behavior are verified where relevant.
+9. Documentation is updated.
+10. Known limitations are documented.
+
+---
+
+# PART XII – EXECUTION PLAN
+
+## M0 – PROJECT AUDIT
+
+Inspect:
+
+- Source code.
+- Package dependencies.
+- 3D scene.
+- Existing assets.
+- Existing gameplay.
+- State management.
+- Persistence.
+- Build configuration.
+
+Deliver:
+
+- Architecture report.
+- Technical debt report.
+- Feature inventory.
+- Refactoring proposal.
+- Implementation roadmap.
+
+Do not begin major code changes before completing the audit.
+
+## M1 – PROJECT FOUNDATION
+
+- Refactor architecture where justified.
+- Establish core domain models.
+- Establish state management.
+- Establish persistence.
+- Establish testing framework.
+- Ensure the existing game still runs.
+
+## M2 – ECONOMY CORE
+
+- Product catalog.
+- Market locations.
+- SupplyDemandSystem.
+- PricingSystem.
+- MarketSystem.
+- EconomySimulation.
+- Price history.
+
+## M3 – TRADING AND INVENTORY
+
+- TradingSystem.
+- Buy/sell.
+- Inventory lots.
+- FIFO cost basis.
+- Spoilage.
+- Transportation.
+- Finance ledger.
+
+## M4 – NPC AND EVENTS
+
+- NPC economic behavior.
+- Market events.
+- Weather.
+- News.
+- Competitors.
+- Supplier schedules.
+
+## M5 – GAMEPLAY AND UI
+
+- HUD.
+- Trading Terminal.
+- Market Dashboard.
+- Inventory.
+- Finance.
+- Market News.
+- NPC interaction.
+- 3D integration.
+
+## M6 – BUSINESS EXPANSION
+
+- Shops.
+- Warehouses.
+- Employees.
+- Logistics.
+- Contracts.
+- Processing.
+
+## M7 – BALANCING AND QA
+
+- Headless simulation.
+- Economic balancing.
+- Anti-exploit testing.
+- Performance profiling.
+- Save/load validation.
+- Desktop/mobile QA.
+
+## M8 – RELEASE PREPARATION
+
+- Production build.
+- Deployment.
+- Error handling.
+- Onboarding.
+- Tutorial.
+- Final documentation.
+
+---
+
+# PART XIII – HOW TO WORK
+
+## 37. Execution protocol
+
+Follow this workflow continuously:
+
+1. Inspect the project.
+2. Understand its current behavior.
+3. Identify the next milestone.
+4. Create a concrete implementation plan.
+5. Implement the smallest complete unit.
+6. Run tests.
+7. Run type checks.
+8. Run production build.
+9. Fix failures.
+10. Update documentation.
+11. Report the outcome.
+12. Proceed to the next milestone.
+
+Do not stop after producing a plan if you have the tools and permissions to implement it.
+
+Do not produce fake completion reports.
+
+If an environment limitation prevents a test, state exactly which test could not be run and why.
+
+## 38. Reporting format
+
+After every milestone, report:
+
+### Completed
+- Features implemented.
+- Files created.
+- Files modified.
+
+### Verification
+- TypeScript check.
+- Unit tests.
+- Integration tests.
+- Production build.
+
+### Issues
+- Bugs.
+- Technical debt.
+- Unimplemented requirements.
+
+### Next milestone
+- Exact next tasks.
+- Expected outcome.
+
+## 39. First action
+
+START WITH M0 – PROJECT AUDIT.
+
+Do not immediately write a new economy engine.
+
+First inspect the existing source and understand:
+
+- How the current 3D world works.
+- How the player moves.
+- How NPCs are represented.
+- How products are represented.
+- How the UI is structured.
+- How the game saves progress.
+- Which components can be retained.
+- Which components should be refactored.
+
+Then produce an audit report and a specific implementation plan.
+
+After the audit, continue with M1 and subsequent milestones.
+
+**The final objective is not to produce a large codebase. It is to deliver a stable, playable, economically coherent Vietnamese market trading simulation game called CHỢ ƠI!.**
